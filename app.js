@@ -11,9 +11,6 @@ const ordersRoutes = require('./routes/orders.js')
 const categoriesRoutes = require('./routes/categories.js')
 const userRoutes = require('./routes/users.js')
 
-// Custom Middlewares
-// const { authJwt, errorHandler } = require('./middlewares')
-const { errorHandler } = require('./middlewares')
 
 // API URL
 const api = process.env.API_URL
@@ -25,7 +22,6 @@ app.use(morgan('tiny'))
 app.use(express.json())
 //app.use(authJwt())
 app.use('/public/uploads', express.static(__dirname + '/public/uploads'))
-app.use(errorHandler)
 
 // Routes
 app.use(`${api}/products`, productsRoutes )
