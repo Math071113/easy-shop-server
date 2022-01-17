@@ -35,6 +35,10 @@ app.use(`${api}/orders`, ordersRoutes)
 app.use(`${api}/categories`, categoriesRoutes)
 app.use(`${api}/users`, userRoutes)
 
+app.get('/', (req, res) => {
+    res.send('Hi')
+})
+
 // DB connection
 mongoose.connect(process.env.DB, {
     useNewUrlParser: true,
