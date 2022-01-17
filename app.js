@@ -12,20 +12,18 @@ const categoriesRoutes = require('./routes/categories.js')
 const userRoutes = require('./routes/users.js')
 
 // Custom Middlewares
-const { authJwt, errorHandler } = require('./middlewares')
+// const { authJwt, errorHandler } = require('./middlewares')
+const { errorHandler } = require('./middlewares')
 
 // API URL
 const api = process.env.API_URL
-
-// Port
-const port = process.env.PORT || 3000
 
 // Middleware
 app.use(cors())
 app.options('*', cors())
 app.use(morgan('tiny'))
 app.use(express.json())
-app.use(authJwt())
+//app.use(authJwt())
 app.use('/public/uploads', express.static(__dirname + '/public/uploads'))
 app.use(errorHandler)
 

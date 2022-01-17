@@ -1,6 +1,7 @@
 const expressJwt = require('express-jwt')
 require('dotenv').config()
 
+/*
 exports.authJwt = (req, res, next) => {
     return expressJwt({
         secret: process.env.JWT_SECRET,
@@ -16,7 +17,9 @@ exports.authJwt = (req, res, next) => {
         ]
     })
 }
+*/
 
+/*
 async function isRevoked(req, payload, done){
     if(!payload.isAdmin){
         done(null, true)
@@ -24,6 +27,7 @@ async function isRevoked(req, payload, done){
 
     done()
 }
+*/
 
 exports.errorHandler = (err, req, res, next) => {
     if(err) return res.status(500).json({ Success: false, Message: err.message })
