@@ -17,7 +17,6 @@ const api = process.env.API_URL
 
 // Middleware
 app.use(cors())
-app.options('*', cors())
 app.use(morgan('tiny'))
 app.use(express.json())
 //app.use(authJwt())
